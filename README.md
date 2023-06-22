@@ -45,8 +45,8 @@ To start, we need to understand the basic structure GetGud's SDK uses for an FPS
   An example of a Game is a CS:GO game which has 30 matches (also known as rounds) within it.
   ```
 
-* Match represents the actual play time that is streamed for analysis.
-A Match contains the actions that occurred during the match's timespan.
+* `Match` represents the actual play time that is streamed for analysis.
+A `Match` contains the actions that occurred during the match's timespan.
 Like `Game`, `Match` also has a GUID which will be provided to you once you start a new match.
 
   ```
