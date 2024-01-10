@@ -237,7 +237,6 @@ int SendPositionAction(struct BaseActionData baseData,
 
 ### Attack Action
 
-To create an Attack Action, use the `AttackActionData` Class.
 An Attack action is any attempt to create damage, now or in the future, for example, firing a shot, swinging a sword, placing a bomb, throwing a grenade, or any other action that may result in damage.
 Note that the Attack action is not bound to the `Damage` action, it is an attempt to cause Damage, not the Damage event itself.
 
@@ -245,8 +244,21 @@ Note that the Attack action is not bound to the `Damage` action, it is an attemp
 int SendHealAction(struct BaseActionData baseData, float healthGained);
 ```
 * `BaseAction` - See BaseAction
-* `attackerPlayerId` - A unique name (your player id) of the player which created the damage, if the damage was created by the environment, you can singal this by using the 'PvE' symbol as the player guid.
 * `weaponGuid` - A unique name of the weapon that the attack was performed with, max length is 36 chars.
+
+### Affect Action
+
+An Affect action is any attempt to create an affect based on the states, now or in the future, for example, taking an item, obtaining a buff or joining into an aura.
+
+```c
+int SendPositionAction(struct BaseActionData baseData,
+                      char* affectGuid,
+                      int affectGuidSize,
+                      AffectState affectState);
+```
+* `BaseAction` - See BaseAction
+* `affectGuid` - A unique name of the affect, max length is 36 chars.
+* `affectState` - An emumiration unit, Attach, Activate, Deactivate or Detach.
 
 ### Damage Action
 
